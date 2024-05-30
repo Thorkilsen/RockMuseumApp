@@ -1,0 +1,17 @@
+@page
+@model RockMuseumApp.Pages.Udstillinger.IndexModel
+@{
+    ViewData["Title"] = "Udstillinger";
+}
+
+<h1>@ViewData["Title"]</h1>
+<ul>
+    @foreach (var udstilling in Model.Udstillinger)
+    {
+    <li>@udstilling.Navn: @udstilling.Beskrivelse</li>
+    }
+    @if (!Model.Udstillinger.Any())
+    {
+    <li>No exhibitions found.</li>
+    }
+</ul>

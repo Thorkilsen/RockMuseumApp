@@ -1,0 +1,20 @@
+@page
+@model RockMuseumApp.Pages.Lydguider.IndexModel
+@{
+    ViewData["Title"] = "Lydguider";
+}
+
+<h1>@ViewData["Title"]</h1>
+<ul>
+    @if (Model.Lydguider != null)
+    {
+    foreach (var lydguide in Model.Lydguider)
+        {
+    <li>@lydguide.Titel: @lydguide.Fil</li>
+        }
+    }
+    else
+    {
+    <li>No audio guides found.</li>
+    }
+</ul>
